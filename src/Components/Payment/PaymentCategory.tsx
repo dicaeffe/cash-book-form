@@ -1,5 +1,3 @@
-import CreditCardIcon from '@mui/icons-material/CreditCard';
-import MoneyIcon from '@mui/icons-material/Money';
 import MyProps from '../BrickUtils/MyProps';
 import Choose from '../BrickUtils/Choose';
 import MyElement from '../BrickUtils/MyElement';

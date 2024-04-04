@@ -30,7 +30,7 @@ function Choose(props:MyMultiProps<string>) {
                         key={v.key}
                         color="primary">
 
-                        {v.icon} {v.helperText}
+                        {v.icon} {v.label}
                     </ToggleButton>
                 )}
             </ToggleButtonGroup>

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import MyDatePicker from './MyDatePicker';
 import PaymentAmount from './Payment/PaymentAmount';
-import { TextField } from '@mui/material';
 import PaymentChannel from './Payment/PaymentChannel';
 import Text from './Text';
 import PaymentCategory from './Payment/PaymentCategory';
@@ -15,11 +14,11 @@ function Page() {
     //const helperOutgoingFund = "Da dovel i prendi?";
     //const helperIncomingFund = "Dove li mandi?";
     const helperAmount = "Inserisci l'importo totale";
-    const checkButtonText = "Verifica";
-    const sendButtonText = "Invia!";
+    //const checkButtonText = "Verifica";
+    //const sendButtonText = "Invia!";
   
     // Form Data
-    const [alert, setAlert] = useState({});//{ severity: "info", text: "Compila con attenzione" }
+    //const [alert, setAlert] = useState({});//{ severity: "info", text: "Compila con attenzione" }
     const [date, setDate] = useState(new Date());
     const [category, setCategory] = useState("ciboUfficio");
     const [description, setDescription] = useState("");
