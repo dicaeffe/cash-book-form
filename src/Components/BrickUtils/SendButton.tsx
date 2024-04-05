@@ -6,19 +6,17 @@ function SendButton(props: Send) {
 
     const onClick = () => {
         alert('clicked');
-        fetch('https://s4bmock.free.beeceptor.com/cash-book-form/', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                firstParam: 'yourValue',
-                secondParam: 'yourOtherValue',
-            })
-        })
         props.body.map(element => {
             fetch('https://s4bmock.free.beeceptor.com/cash-book-form/', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(element)
+            })
+            fetch(/*'https://lab.dicaeffe.mooo.com/cash-book/1.0.0/cashbook/transaction'*/
+                    'http://s4bmock.free.beeceptor.com/cash-book/1.0.0/cashbook/transaction', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
