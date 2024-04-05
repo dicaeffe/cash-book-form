@@ -3,6 +3,7 @@ import MyProps from '../BrickUtils/MyProps';
 import { Chip, Avatar } from '@mui/material';
 
 function PreConfigPayments(props:MyProps<MyPreConfig[]>) {
+  const label = "PreConfig Payments"
 
   const values = [{
     key: 1,
@@ -33,7 +34,7 @@ function PreConfigPayments(props:MyProps<MyPreConfig[]>) {
 
   return (
     <div>
-      PreConfig Payments
+      <p>{label}</p>
       {values.map(v =>
         <Chip
           avatar={<Avatar alt={v.name} src={v.avatar} />}

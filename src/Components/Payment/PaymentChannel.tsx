@@ -6,10 +6,11 @@ import FoodBankIcon from '@mui/icons-material/FoodBank';
 import SavingsIcon from '@mui/icons-material/Savings';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-import { IconButton, Button, Stack } from '@mui/material';
 import AllOutIcon from '@mui/icons-material/AllOut';
+import MyStackButtons from '../BrickUtils/MyStackButtons';
 
 function PaymentChannel(props:MyProps<string>) {
+  const label = "Canale transazione"
 
   const values = [
     new MyElement(
@@ -61,30 +62,7 @@ function PaymentChannel(props:MyProps<string>) {
 
   return (
     <div>
-      <p>Canale transazione: {props.defaultValue}</p>
-      <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
-        {values.map(v =>
-          <IconButton aria-label={v.label} onClick={() => {props.onChange(v.value)}} color={v.value == props.defaultValue ? "primary" : "secondary"} >
-            {v.icon}<div><small>{v.label}</small></div>
-          </IconButton>
-        )}
-      </Stack>
-      <br/>
-      <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
-        {values.map(v =>
-          <IconButton aria-label={v.label} onClick={() => {props.onChange(v.value)}} color={v.value == props.defaultValue ? "primary" : "secondary"} >
-            {v.icon}<small>{v.label}</small>
-          </IconButton>
-        )}
-      </Stack>
-      <br/>
-      <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
-        {values.map(v =>
-          <Button startIcon={v.icon} onClick={() => {props.onChange(v.value)}} color={v.value == props.defaultValue ? "primary" : "secondary" } >
-            <div><small>{v.label}</small></div>
-          </Button>
-        )}
-      </Stack>
+      <MyStackButtons parentProps = {props} label={label.concat(":")} values={values} />
     </div>
   )
 }

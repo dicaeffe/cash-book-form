@@ -1,22 +1,14 @@
 import { useState } from 'react';
-import MyDatePicker from './MyDatePicker';
 import PaymentAmount from './Payment/PaymentAmount';
 import PaymentChannel from './Payment/PaymentChannel';
-import Text from './Text';
+import Text from './BrickUtils/Text';
 import PaymentCategory from './Payment/PaymentCategory';
 import PreConfigPayments from './Payment/PreConfigPayments';
 import MyPreConfig from './BrickUtils/MyPreConfig';
 import SendButton from './BrickUtils/SendButton';
+import PaymentDate from './Payment/PaymentDate';
 
 function Page() {
-    //const helperDate = "Quando?";
-    //const helperCategory = "Quale categoria?";
-    const helperDescription = "Descrivi la movimentazione: a cosa è dovuta?";
-    //const helperOutgoingFund = "Da dovel i prendi?";
-    //const helperIncomingFund = "Dove li mandi?";
-    const helperAmount = "Inserisci l'importo totale";
-    //const checkButtonText = "Verifica";
-    //const sendButtonText = "Invia!";
   
     // Form Data
     //const [alert, setAlert] = useState({});//{ severity: "info", text: "Compila con attenzione" }
@@ -62,13 +54,13 @@ function Page() {
     }
     return (
         <div>
-            <MyDatePicker defaultValue={date} onChange={setDate} label={'Data di esecuzione'} />
-            <PaymentCategory defaultValue={category} onChange={setCategory} />
-            <PaymentAmount defaultValue={amount} onChange={setAmount} helperText={helperAmount} />
+            <PaymentDate defaultValue={date} onChange={setDate} />
             <PreConfigPayments defaultValue={formData} onChange={preConfig} />
+            <PaymentCategory defaultValue={category} onChange={setCategory} />
+            <PaymentAmount defaultValue={amount} onChange={setAmount} />
             <PaymentChannel defaultValue={outgoingFund} onChange={setOutgoingFund} />
             <PaymentChannel defaultValue={incomingFund} onChange={setIncomingFund} />
-            <Text defaultValue={description} onChange={setDescription} label="Descrizione" id="descrizione-text" helperText={helperDescription} />
+            <Text defaultValue={description} onChange={setDescription} label="Descrizione" id="descrizione-text" />
         
         
             {"date = "+formData[0].date.toISOString()}<br/>

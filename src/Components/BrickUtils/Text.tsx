@@ -1,5 +1,5 @@
 import { TextField } from '@mui/material';
-import MyProps from './BrickUtils/MyProps';
+import MyProps from './MyProps';
 
 function Text(props:MyProps<string>) {
 
