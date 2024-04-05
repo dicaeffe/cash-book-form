@@ -6,6 +6,7 @@ import Text from './Text';
 import PaymentCategory from './Payment/PaymentCategory';
 import PreConfigPayments from './Payment/PreConfigPayments';
 import MyPreConfig from './BrickUtils/MyPreConfig';
+import SendButton from './BrickUtils/SendButton';
 
 function Page() {
     //const helperDate = "Quando?";
@@ -77,6 +78,7 @@ function Page() {
             {"incomingFund = "+formData[0].incomingFund}<br/>
             {"description = "+formData[0].description}<br/>
             
+            <SendButton body={formData} />
         </div>
     );
 }
