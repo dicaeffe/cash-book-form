@@ -6,7 +6,7 @@ import FoodBankIcon from '@mui/icons-material/FoodBank';
 import SavingsIcon from '@mui/icons-material/Savings';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-import { ButtonGroup, IconButton, Button } from '@mui/material';
+import { IconButton, Button, Stack } from '@mui/material';
 import AllOutIcon from '@mui/icons-material/AllOut';
 
 function PaymentChannel(props:MyProps<string>) {
@@ -18,43 +18,43 @@ function PaymentChannel(props:MyProps<string>) {
       <MoneyIcon />
     ), new MyElement(
       2,
-      "ccWebank", "cc webank",
+      "ccWebank", "ccWB",
       <AccountBalanceIcon />
     ), new MyElement(
       3,
-      "ccIllimity", "cc illimity",
+      "ccIllimity", "ccILL",
       <AccountBalanceIcon />
     ), new MyElement(
       4,
-      "crPostePay", "cr postepay",
+      "crPostePay", "crPP",
       <CreditCardIcon />
     ), new MyElement(
       5,
-      "buoniPasto", "buoni pasto aziendali",
+      "buoniPasto", "bp",
       <FoodBankIcon />
     ), new MyElement(
       6,
-      "cdRendimax", "cd rendimax",
+      "cdRendimax", "cdRNMX",
       <SavingsIcon />
     ), new MyElement(
       7,
-      "cdProgetto", "cd progetto",
+      "cdProgetto", "cdPRO",
       <SavingsIcon />
     ), new MyElement(
       8,
-      "payPal", "wallet paypal",
+      "payPal", "wPP",
       <AccountBalanceWalletIcon />
     ), new MyElement(
       9,
-      "crHype", "cr hype",
+      "crHype", "crHY",
       <CreditCardIcon />
     ), new MyElement(
       10,
-      "satispay", "wallet satispay",
+      "satispay", "wSP",
       <AccountBalanceWalletIcon />
     ), new MyElement(
       11,
-      "out", "fuori",
+      "out", "out",
       <AllOutIcon />
     )
   ]
@@ -62,21 +62,29 @@ function PaymentChannel(props:MyProps<string>) {
   return (
     <div>
       <p>Canale transazione: {props.defaultValue}</p>
-      <ButtonGroup variant="text" aria-label="select the payment channel">
+      <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
         {values.map(v =>
           <IconButton aria-label={v.label} onClick={() => {props.onChange(v.value)}} color={v.value == props.defaultValue ? "primary" : "secondary"} >
-            {v.icon}
+            {v.icon}<div><small>{v.label}</small></div>
           </IconButton>
         )}
-      </ButtonGroup>
+      </Stack>
       <br/>
-      <ButtonGroup variant="text" aria-label="select the payment channel">
+      <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
+        {values.map(v =>
+          <IconButton aria-label={v.label} onClick={() => {props.onChange(v.value)}} color={v.value == props.defaultValue ? "primary" : "secondary"} >
+            {v.icon}<small>{v.label}</small>
+          </IconButton>
+        )}
+      </Stack>
+      <br/>
+      <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap">
         {values.map(v =>
           <Button startIcon={v.icon} onClick={() => {props.onChange(v.value)}} color={v.value == props.defaultValue ? "primary" : "secondary" } >
-            <p><small>{v.label}</small></p>
+            <div><small>{v.label}</small></div>
           </Button>
         )}
-      </ButtonGroup>
+      </Stack>
     </div>
   )
 }
