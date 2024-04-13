@@ -40,7 +40,7 @@ function SendButton(props: Send) {
       if (reason === 'clickaway') {
         return;
       }
-      console.log(event.type);
+      console.log("Closing snackbar notification due to: " + event ? event.type : "expiration");
       
       setOpenSnackbar(false);
     };
