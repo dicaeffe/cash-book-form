@@ -33,11 +33,10 @@ function SendButton(props: Send) {
         })
     };
 
-    const handleClose = (event: React.SyntheticEvent | Event, reason?: string) => {
+    const handleClose = (_event: React.SyntheticEvent | Event, reason?: string) => {
       if (reason === 'clickaway') {
         return;
       }
-      console.log("Closing snackbar notification due to: " + event ? event.type : "expiration");
       
       setOpenSnackbarSuccess(false);
       setOpenSnackbarFailure(false);
