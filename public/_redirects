@@ -1,3 +1,4 @@
 # Redirects from what the browser requests to what we serve
-/app                https://lab.dicaeffe.mooo.com/cash-book/
+/api                https://lab.dicaeffe.mooo.com/cash-book/
+/assets            /cash-book-form/assets
 /*                  https://lab.dicaeffe.mooo.com/cash-book-form/
