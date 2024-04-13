@@ -21,10 +21,10 @@ function SendButton(props: Send) {
             })
             .then(response => {
               if (response.ok) {
+                setOpenSnackbarSuccess(true);
+              } else {
                 setOpenSnackbarFailure(true);
                 throw new Error(response.statusText)
-              } else {
-                setOpenSnackbarSuccess(true);
               }
             })
             .catch(() => {
