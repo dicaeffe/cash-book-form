@@ -5,8 +5,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import React, { useState } from 'react';
 
 function SendButton(props: Send) {
-    const [openSnackbar, setOpenSnackbar] = useState(false);
-    const [messageSnackbar, setMessageSnackbar] = useState(false);
+    const [openSnackbarSuccess, setOpenSnackbarSuccess] = useState(false);
+    const [openSnackbarFailure, setOpenSnackbarFailure] = useState(false);
     
     const onClick = () => {
         props.body.map(element => {
@@ -21,17 +21,14 @@ function SendButton(props: Send) {
             })
             .then(response => {
               if (response.ok) {
-                setMessageSnackbar(true);
-                setOpenSnackbar(true);
+                setOpenSnackbarFailure(true);
                 throw new Error(response.statusText)
               } else {
-                setMessageSnackbar(false);
-                setOpenSnackbar(true);
+                setOpenSnackbarSuccess(true);
               }
             })
             .catch(() => {
-                setMessageSnackbar(false);
-                setOpenSnackbar(true);
+                setOpenSnackbarFailure(true);
             })
         })
     };
@@ -42,7 +39,8 @@ function SendButton(props: Send) {
       }
       console.log("Closing snackbar notification due to: " + event ? event.type : "expiration");
       
-      setOpenSnackbar(false);
+      setOpenSnackbarSuccess(false);
+      setOpenSnackbarFailure(false);
     };
     
     const action = (
@@ -72,10 +70,17 @@ function SendButton(props: Send) {
             </Button>
             
             <Snackbar
-                open={openSnackbar}
+                open={openSnackbarSuccess}
                 autoHideDuration={3000}
                 onClose={handleClose}
-                message={messageSnackbar ? "Inviato" : "Errore"}
+                message="Inviato"
+                action={action}
+            />
+            <Snackbar
+                open={openSnackbarFailure}
+                autoHideDuration={3000}
+                onClose={handleClose}
+                message="Errore"
                 action={action}
             />
         </div>
