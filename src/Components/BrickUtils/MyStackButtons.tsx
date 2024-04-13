@@ -7,7 +7,6 @@ function MyStackButtons(props: Props) {
     return (
         <div>
           <p>{props.label} {props.parentProps.defaultValue}</p>
-          <br/>
           <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap flexWrap="wrap" divider={<Divider orientation="vertical" flexItem />} >
             {props.values.map(v =>
               <Button startIcon={v.icon} onClick={() => {props.parentProps.onChange(v.value)}} color={v.value == props.parentProps.defaultValue ? "primary" : "secondary" } >

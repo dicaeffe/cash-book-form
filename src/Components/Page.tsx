@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import PaymentAmount from './Payment/PaymentAmount';
 import PaymentChannel from './Payment/PaymentChannel';
 import Text from './BrickUtils/Text';
@@ -29,6 +29,13 @@ function Page() {
             amount
           )
     ];
+
+    // def come cambiare lo stato
+    useEffect(() => {
+        setDescription(() => {return description});
+        setAmount(() => {return amount});
+    }, [amount, setDescription]);// Dipendenza dello useEffect: monitorerà anche questa variabile
+
     const preConfig = (selectedValues:MyPreConfig[]) => {
         console.info(selectedValues);
         const selectedValue = selectedValues[0];
@@ -56,13 +63,12 @@ function Page() {
         <div>
             <PaymentDate defaultValue={date} onChange={setDate} />
             <PreConfigPayments defaultValue={formData} onChange={preConfig} />
-            <PaymentCategory defaultValue={category} onChange={setCategory} />
+            <Text defaultValue={description} onChange={setDescription} label="Descrizione" id="descrizione-text" />
             <PaymentAmount defaultValue={amount} onChange={setAmount} />
+            <PaymentCategory defaultValue={category} onChange={setCategory} />
             <PaymentChannel defaultValue={outgoingFund} onChange={setOutgoingFund} />
             <PaymentChannel defaultValue={incomingFund} onChange={setIncomingFund} />
-            <Text defaultValue={description} onChange={setDescription} label="Descrizione" id="descrizione-text" />
-        
-        
+
             {"date = "+formData[0].date.toISOString()}<br/>
             {"amount = "+formData[0].amount +"€"}<br/>
             {"category = "+formData[0].category}<br/>

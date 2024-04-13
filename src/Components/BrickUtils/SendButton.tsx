@@ -5,8 +5,8 @@ import MyPreConfig from './MyPreConfig';
 function SendButton(props: Send) {
 
     const onClick = () => {
-        alert('clicked');
         props.body.map(element => {
+            alert(element.toString());
             fetch('https://s4bmock.free.beeceptor.com/cash-book-form/', {
                 method: 'POST',
                 headers: {
@@ -15,8 +15,10 @@ function SendButton(props: Send) {
                 },
                 body: JSON.stringify(element)
             })
-            fetch(/*'https://lab.dicaeffe.mooo.com/cash-book/1.0.0/cashbook/transaction'*/
-                    'http://s4bmock.free.beeceptor.com/cash-book/1.0.0/cashbook/transaction', {
+            fetch(
+                    'https://lab.dicaeffe.mooo.com/cash-book/1.0.0/cashbook/transaction'
+                    //'http://s4bmock.free.beeceptor.com/cash-book/1.0.0/cashbook/transaction'
+                    , {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

@@ -6,7 +6,6 @@ function PaymentDate(props: MyProps<Date>) {
 
     return (
         <div>
-            <p>{label}{": "} {props.defaultValue.toISOString()}</p>
             <MyDatePicker defaultValue={props.defaultValue} onChange={props.onChange} label={label} />
         </div>
     )

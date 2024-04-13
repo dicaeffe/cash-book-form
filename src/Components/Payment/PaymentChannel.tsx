@@ -8,6 +8,10 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import AllOutIcon from '@mui/icons-material/AllOut';
 import MyStackButtons from '../BrickUtils/MyStackButtons';
+import CurrencyExchangeIcon from '@mui/icons-material/CurrencyExchange';
+import OutputIcon from '@mui/icons-material/Output';
+import InputIcon from '@mui/icons-material/Output';
+import HelpCenterIcon from '@mui/icons-material/HelpCenter';
 
 function PaymentChannel(props:MyProps<string>) {
   const label = "Canale transazione"
@@ -19,44 +23,60 @@ function PaymentChannel(props:MyProps<string>) {
       <MoneyIcon />
     ), new MyElement(
       2,
-      "ccWebank", "ccWB",
-      <AccountBalanceIcon />
-    ), new MyElement(
-      3,
-      "ccIllimity", "ccILL",
-      <AccountBalanceIcon />
-    ), new MyElement(
-      4,
-      "crPostePay", "crPP",
-      <CreditCardIcon />
-    ), new MyElement(
-      5,
       "buoniPasto", "bp",
       <FoodBankIcon />
     ), new MyElement(
-      6,
-      "cdRendimax", "cdRNMX",
-      <SavingsIcon />
+      3,
+      "crPostePay", "crPP",
+      <CreditCardIcon />
     ), new MyElement(
-      7,
-      "cdProgetto", "cdPRO",
-      <SavingsIcon />
-    ), new MyElement(
-      8,
-      "payPal", "wPP",
-      <AccountBalanceWalletIcon />
-    ), new MyElement(
-      9,
+      4,
       "crHype", "crHY",
       <CreditCardIcon />
     ), new MyElement(
+      5,
+      "ccWebank", "ccWB",
+      <AccountBalanceIcon />
+    ), new MyElement(
+      6,
+      "ccIllimity", "ccILL",
+      <AccountBalanceIcon />
+    ), new MyElement(
+      7,
+      "cdRendimax", "cdRNMX",
+      <SavingsIcon />
+    ), new MyElement(
+      8,
+      "cdProgetto", "cdPRO",
+      <SavingsIcon />
+    ), new MyElement(
+      9,
+      "investimentiBuoni", "INV",
+      <CurrencyExchangeIcon />
+    ), new MyElement(
       10,
+      "altro", "ALTRO",
+      <HelpCenterIcon />
+    ), new MyElement(
+      11,
+      "payPal", "wPP",
+      <AccountBalanceWalletIcon />
+    ), new MyElement(
+      12,
       "satispay", "wSP",
       <AccountBalanceWalletIcon />
     ), new MyElement(
-      11,
+      13,
       "out", "out",
       <AllOutIcon />
+    ), new MyElement(
+      14,
+      "crediti", "cred",
+      <InputIcon />
+    ), new MyElement(
+      15,
+      "debiti", "deb",
+      <OutputIcon />
     )
   ]
 

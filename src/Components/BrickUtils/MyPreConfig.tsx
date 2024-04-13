@@ -40,6 +40,16 @@ class MyPreConfig {
 			formData.amount = this.amount
 		}
 	}
+
+	public toString():string {
+		return "\n"
+		+ this.date.toISOString() + "\n"
+		+ this.category + "\n"
+		+ this.description + "\n"
+		+ "---" + "\n"
+		+ this.outgoingFund + " ➡️ " + this.incomingFund + "\n"
+		+ this.amount + "€\n"
+	}
 }
 
 export default MyPreConfig

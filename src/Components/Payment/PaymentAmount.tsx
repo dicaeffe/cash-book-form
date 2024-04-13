@@ -17,7 +17,6 @@ function PaymentAmount(props: MyProps<string>) {
 
     return (
         <div>
-            <p>{label}{": "} {props.defaultValue}</p>
             <Text
                 label={label}
                 id="importo-number"

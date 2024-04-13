@@ -1,33 +1,58 @@
 import MyPreConfig from '../BrickUtils/MyPreConfig';
 import MyProps from '../BrickUtils/MyProps';
 import { Chip, Avatar } from '@mui/material';
+//import Conad from '/src/static/images/avatar/Conad.png';
+//import Edenred from '/src/static/images/avatar/Edenred.png';
+import Windtre from '/images/avatars/Windtre.svg';
+import Edenred from '/images/avatars/Edenred.png';
+import Conad from '/images/avatars/Conad.png';/*
+import Edenred from '/public/assets/images/avatar/Edenred.png';
+import Windtre from '/public/assets/images/avatar/Windtre.svg';*/
 
 function PreConfigPayments(props:MyProps<MyPreConfig[]>) {
   const label = "PreConfig Payments"
 
   const values = [{
-    key: 1,
-    name: "Conad",
-    avatar: "/src/static/images/avatar/Conad.png",
+    key: 0,
+    name: "Stipendio",
+    avatar: "S",
     defaultValues: [
-      new MyPreConfig(null, "spesaCasa", "Spesa al Conad", "buoniPasto", "out"),
-      new MyPreConfig(null, "spesaCasa", "Spesa al Conad", "ccWebank", "out")
+      new MyPreConfig(null, "payroll", "Spesa al Conad", "out", "ccWebank", "0,00")
+    ]
+  },{
+    key: 1,
+    name: "BP",
+    avatar: Conad,
+    defaultValues: [
+      new MyPreConfig(null, "spesaCasa", "Spesa al Conad", "buoniPasto", "out", "16,00")
     ]
   },{
     key: 2,
-    name: "Gros",
-    avatar: "Gros",
+    name: "CC",
+    avatar: Conad,
     defaultValues: [
-      new MyPreConfig(null, "spesaCasa", "Spesa al Gros", "buoniPasto", "out"),
-      new MyPreConfig(null, "spesaCasa", "Spesa al Gros", "ccIllimity", "out")
+      new MyPreConfig(null, "spesaCasa", "Spesa al Conad", "ccWebank", "out", "0,00")
     ]
   },{
     key: 3,
-    name: "Style",
-    avatar: "S",
+    name: "Pranzo BP",
+    avatar: Edenred,
     defaultValues: [
-      new MyPreConfig(null, "ciboUfficio", "Pranzo da Style", "buoniPasto", "out"),
-      new MyPreConfig(null, "ciboUfficio", "Pranzo da Style", "ccIllimity", "out")
+      new MyPreConfig(null, "ciboUfficio", "Pranzo da ", "buoniPasto", "out", "0,00")
+    ]
+  },{
+    key: 4,
+    name: "Pranzo CC",
+    avatar: "P",
+    defaultValues: [
+      new MyPreConfig(null, "ciboUfficio", "Pranzo da ", "ccIllimity", "out", "0,00")
+    ]
+  },{
+    key: 4,
+    name: "Wind3",
+    avatar: Windtre,
+    defaultValues: [
+      new MyPreConfig(null, "telefonia", "Abbonamento Windtre", "ccWebank", "out", "5,00")
     ]
   }
   ]
