@@ -40,7 +40,8 @@ function SendButton(props: Send) {
       if (reason === 'clickaway') {
         return;
       }
-  
+      console.log(event.type);
+      
       setOpenSnackbar(false);
     };
     
