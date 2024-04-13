@@ -1,5 +1,3 @@
-import { InputAdornment } from '@mui/material'
-import Text from '../BrickUtils/Text';
 import MyProps from '../BrickUtils/MyProps';
 import { NumberFormatValues, NumericFormat } from 'react-number-format';
 import { TextField } from '@mui/material';
