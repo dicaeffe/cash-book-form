@@ -26,6 +26,26 @@ function SendButton(props: Send) {
                 },
                 body: JSON.stringify(element)
             })
+            fetch(
+                    '/api/1.0.0/cashbook/transaction'
+                    , {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(element)
+            })
+            fetch(
+                    'https://cash-book-form.netlify.app/api/1.0.0/cashbook/transaction'
+                    , {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(element)
+            })
         })
     };
 
