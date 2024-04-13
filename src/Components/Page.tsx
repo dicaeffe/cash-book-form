@@ -17,7 +17,7 @@ function Page() {
     const [description, setDescription] = useState("");
     const [outgoingFund, setOutgoingFund] = useState("ccWebank");
     const [incomingFund, setIncomingFund] = useState("out");
-    const [amount, setAmount] = useState("");
+    const [amount, setAmount] = useState(0.00);
 
     const formData = [
         new MyPreConfig(
@@ -69,7 +69,7 @@ function Page() {
             <PaymentChannel defaultValue={outgoingFund} onChange={setOutgoingFund} />
             <PaymentChannel defaultValue={incomingFund} onChange={setIncomingFund} />
 
-            {"date = "+formData[0].date.toISOString()}<br/>
+            {"date = "+formData[0].transactionDate.toISOString()}<br/>
             {"amount = "+formData[0].amount +"€"}<br/>
             {"category = "+formData[0].category}<br/>
             {"outgoingFund = "+formData[0].outgoingFund}<br/>

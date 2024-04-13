@@ -1,10 +1,10 @@
 class MyPreConfig {
-	date: Date;
+	transactionDate: Date;
 	category?: string | null;
 	description?: string | null;
 	outgoingFund?: string | null;
 	incomingFund?: string | null;
-	amount?: string | null;
+	amount?: number | null;
 
 	constructor(
 			date: Date | null,
@@ -12,8 +12,8 @@ class MyPreConfig {
 			description?: string | null,
 			outgoingFund?: string | null,
 			incomingFund?: string | null,
-			amount?: string | null) {
-		this.date = date ? date : new Date();
+			amount?: number | null) {
+		this.transactionDate = date ? date : new Date();
 		this.category = category;
 		this.description = description;
 		this.outgoingFund = outgoingFund;
@@ -22,7 +22,7 @@ class MyPreConfig {
 	}
 
 	public update(formData: MyPreConfig) {
-		formData.date = this.date ? this.date : formData.date
+		formData.transactionDate = this.transactionDate ? this.transactionDate : formData.transactionDate
 
 		if (this.category) {
 			formData.category = this.category
@@ -43,7 +43,7 @@ class MyPreConfig {
 
 	public toString():string {
 		return "\n"
-		+ this.date.toISOString() + "\n"
+		+ this.transactionDate.toISOString() + "\n"
 		+ this.category + "\n"
 		+ this.description + "\n"
 		+ "---" + "\n"
