@@ -5,7 +5,7 @@ import Text from './BrickUtils/Text';
 import PaymentCategory from './Payment/PaymentCategory';
 import PreConfigPayments from './Payment/PreConfigPayments';
 import MyPreConfig from './BrickUtils/MyPreConfig';
-import SendButton from './BrickUtils/SendButton';
+import SendButton from './Form/SendButton';
 import PaymentDate from './Payment/PaymentDate';
 
 function Page() {
