@@ -12,7 +12,7 @@ function SendButton(props:{paymentData:PaymentData}) {
     const onClick = () => {
       const requests: BERequests = new BERequests(props.paymentData);
       requests.bodies.map(body => {
-            alert(body.toString());
+            //alert(body.toString());
             fetch('https://lab.dicaeffe.mooo.com/cash-book/1.0.0/cashbook/transaction', {
                 method: 'POST',
                 headers: {
