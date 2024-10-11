@@ -111,6 +111,7 @@ function FormTypeSelector() {
       <br />
 
       {paymentData.transactions?.map((t, index) => {
+        console.log(t)
         return (
           <div key={index}>
             <Card>
