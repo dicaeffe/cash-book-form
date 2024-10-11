@@ -11,6 +11,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.MuiCardContent-root {
+  background-color: rgb(183, 255, 213);
+}
 
 a {
   font-weight: 500;

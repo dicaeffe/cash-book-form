@@ -7,6 +7,7 @@ import PreConfigPayments from './Payment/PreConfigPayments';
 import MyPreConfig from './BrickUtils/MyPreConfig';
 import SendButton from './Form/SendButton';
 import PaymentDate from './Payment/PaymentDate';
+import FormTypeSelector from './PaymentForm/FormTypeSelector';
 
 function Page() {
   
@@ -61,6 +62,7 @@ function Page() {
     }
     return (
         <div>
+            <FormTypeSelector />{/*
             <PaymentDate defaultValue={date} onChange={setDate} />
             <PreConfigPayments defaultValue={formData} onChange={preConfig} />
             <Text defaultValue={description} onChange={setDescription} label="Descrizione" id="descrizione-text" />
@@ -76,7 +78,7 @@ function Page() {
             {"incomingFund = "+formData[0].incomingFund}<br/>
             {"description = "+formData[0].description}<br/>
             
-            <SendButton body={formData} />
+            <SendButton body={formData} />*/}
         </div>
     );
 }
