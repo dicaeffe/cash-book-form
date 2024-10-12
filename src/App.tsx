@@ -1,12 +1,12 @@
 import './App.css'
-import Page from './Components/Page'
+import FormTypeSelector from './Components/PaymentForm/FormTypeSelector'
 
 function App() {
 
   return (
     <>
       <div>
-        <Page/>
+        <FormTypeSelector />
       </div>
     </>
   )

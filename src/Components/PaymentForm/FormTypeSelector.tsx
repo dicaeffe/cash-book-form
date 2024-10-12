@@ -105,9 +105,9 @@ function FormTypeSelector() {
       )}
       <Divider orientation="horizontal" variant="middle" flexItem />
       <br />
+      <PaymentCategory paymentData={paymentData} onChange={onFormChange} />
       <PaymentDate paymentData={paymentData} onChange={onFormChange} />
       <PaymentDescription paymentData={paymentData} onChange={onFormChange} />
-      <PaymentCategory paymentData={paymentData} onChange={onFormChange} />
       <br />
 
       {paymentData.transactions?.map((t, index) => {

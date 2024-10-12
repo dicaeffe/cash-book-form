@@ -20,6 +20,9 @@ import HikingIcon from '@mui/icons-material/Hiking';
 import PaymentData from '../Model/PaymentData';
 import MyStackButtons from '../BrickUtils/MyStackButtons';
 import MyElement from '../Model/MyElement';
+import CheckroomIcon from '@mui/icons-material/Checkroom';
+import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
+import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 
 function PaymentCategory(props:{paymentData:PaymentData, onChange:(d: PaymentData) => void}) {
   const label = "Voce di spesa"
@@ -32,7 +35,7 @@ function PaymentCategory(props:{paymentData:PaymentData, onChange:(d: PaymentDat
       <TakeoutDiningIcon />
     ), new MyElement(
       2,
-      "",
+      "spesaCasa",
       "Spesa",
       <ShoppingCartIcon />
     ), new MyElement(
@@ -87,7 +90,7 @@ function PaymentCategory(props:{paymentData:PaymentData, onChange:(d: PaymentDat
       <HomeIcon />
     ), new MyElement(
       13,
-      "altroCasa",
+      "altro",
       "Altro",
       <AddHomeIcon />
     ), new MyElement(
@@ -103,28 +106,43 @@ function PaymentCategory(props:{paymentData:PaymentData, onChange:(d: PaymentDat
     ), new MyElement(
       16,
       "manutenzione",
-      "manutenzione",
+      "manut.",
       <BuildIcon />
     ), new MyElement(
       17,
-      "Vacanze",
+      "vacanze",
       "Vacanze",
       <LuggageIcon />
     ), new MyElement(
       18,
-      "Formazione",
-      "Form",
+      "formazione",
+      "Form.",
       <SchoolIcon />
     ), new MyElement(
       19,
-      "Scout",
+      "scout",
       "Scout",
       <HikingIcon />
     ), new MyElement(
       20,
-      "Beneficienza",
-      "Benef",
+      "beneficienza",
+      "Benef.",
       <AccessibleIcon />
+    ), new MyElement(
+      21,
+      "automobile",
+      "Auto",
+      <DirectionsCarIcon />
+    ), new MyElement(
+      22,
+      "lavanderiaSartoria",
+      "LavaCuci",
+      <LocalLaundryServiceIcon />
+    ), new MyElement(
+      23,
+      "vestitiScarpe",
+      "Armadio",
+      <CheckroomIcon />
     )
   ]
 
