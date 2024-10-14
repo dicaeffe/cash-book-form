@@ -106,6 +106,8 @@ function FormTypeSelector() {
       <Divider orientation="horizontal" variant="middle" flexItem />
       <br />
       <PaymentCategory paymentData={paymentData} onChange={onFormChange} />
+      <Divider orientation="horizontal" variant="middle" flexItem />
+      <br />
       <PaymentDate paymentData={paymentData} onChange={onFormChange} />
       <PaymentDescription paymentData={paymentData} onChange={onFormChange} />
       <br />
@@ -129,9 +131,45 @@ function FormTypeSelector() {
           </div>
         )
       })}
-      <br />{"Riepilogo"}
-      <br />{"" + paymentData}
       <SendButton paymentData={paymentData} />
+      <br />
+
+      <Divider orientation="horizontal" variant="middle" flexItem />
+      <strong>Riepilogo</strong><br />
+      <table>
+        <tr>
+          <td><strong>Data</strong></td>
+          <td>{paymentData.transactionDate.toISOString()}</td>
+        </tr>
+        <tr>
+          <td><strong>Cat.</strong></td>
+          <td>{paymentData.category}</td>
+        </tr>
+        <tr>
+          <td><strong>Desc.</strong></td>
+          <td>{paymentData.description}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <table>
+              {paymentData.transactions?.map((value, index) => {
+                return (
+                  <tr>
+                    <td><strong>{index}</strong></td>
+                    <td>{value.outgoingFund}</td>
+                    <td>{"➡️"}</td>
+                    <td>{value.incomingFund}</td>
+                    <td>{value.amount + "€"}</td>
+                  </tr>
+                )
+              })}
+            </table>
+          </td>
+        </tr>
+      </table>
+      
+      <Divider orientation="horizontal" variant="middle" flexItem />
     </div>
   )
 }
