@@ -11,9 +11,9 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Routes>
-            <Route index element={<FormTypeSelector />} />
-            <Route path="/" element={<FormTypeSelector />} />
-            <Route path="/cash-book" element={<FormTypeSelector />} />
+            <Route index element={<FormKeyVal />} />
+            <Route path="/" element={<FormKeyVal />} />
+            <Route path="/cash-book-form" element={<FormTypeSelector />} />
             <Route path="/key-value" element={<FormKeyVal />} />
           </Routes>
         </BrowserRouter>
