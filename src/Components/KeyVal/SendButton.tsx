@@ -13,7 +13,7 @@ function SendButton(props: { data: KeyVal }) {
     /*const requests: BERequests = new BERequests(props.data);
       requests.bodies.map(body => {*/
     //alert(body.toString());
-    fetch("https://fdctst.free.beeceptor.com/cash-book/1.0.0/keyval", {
+    fetch("https://lab.dicaeffe.mooo.com/cash-book/1.0.0/keyval", {
       method: "POST",
       headers: {
         Accept: "application/json",
