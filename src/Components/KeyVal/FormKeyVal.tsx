@@ -1,8 +1,9 @@
 import { useState } from "react";
 import KeyVal from "./Model/KeyVal";
-import KeyField from "./KeyFrield";
 import ValueField from "./ValueField";
 import SendButton from "./SendButton";
+import KeyChips from "./KeyChips";
+import KeyField from "./KeyField";
 
 const FormKeyVal = () => {
   const label = "FormKeyVal";
@@ -12,7 +13,6 @@ const FormKeyVal = () => {
     setKeyValData(newData);
     console.info("---------New Value of KeyVal");
     console.info(newData);
-    console.info(keyValData);
   };
 
   return (
@@ -21,6 +21,7 @@ const FormKeyVal = () => {
       <KeyField data={keyValData} onChange={onFormChange} />
       <ValueField data={keyValData} onChange={onFormChange} />
       <SendButton data={keyValData} />
+      <KeyChips data={keyValData} onChange={onFormChange} />
     </div>
   );
 };

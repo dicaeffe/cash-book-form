@@ -20,7 +20,7 @@ function KeyField(props: { data: KeyVal; onChange: (d: KeyVal) => void }) {
         required
         id={id}
         helperText={helper}
-        defaultValue={props.data.key}
+        value={props.data.key}
         onChange={(event) => handleFormChange(event)}
         type="text"
         margin="normal"
