@@ -5,7 +5,9 @@ import { useEffect, useState } from "react";
 function KeyChips(props: { data: KeyVal; onChange: (d: KeyVal) => void }) {
   const [keyList, setKeyList] = useState<{ data: KeyVal[] }>({ data: [] });
   const label = "KeyChips";
-  const keyListUrl = "https://fdcmock.free.beeceptor.com/keyval/keys";
+  const keyListUrl =
+    "https://lab.dicaeffe.mooo.com/cash-book/1.0.0/keyval/keys";
+  //"https://fdcmock.free.beeceptor.com/keyval/keys";
   //"https://lab.dicaeffe.mooo.com/cash-book/1.0.0/keyval/keys";
 
   const onKeySelection = (key: string) => {
