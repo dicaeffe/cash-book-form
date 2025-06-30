@@ -17,7 +17,7 @@ function PaymentChannel(props: MyProps<string>) {
   const label = "Canale transazione";
 
   const values = [
-    new MyElement(1, "contanti", "contanti", <MoneyIcon />),
+    new MyElement(1, "contantiX", "contanti", <MoneyIcon />),
     new MyElement(2, "buoniPasto", "bp", <FoodBankIcon />),
     new MyElement(3, "crPostePay", "crPP", <CreditCardIcon />),
     new MyElement(4, "crHype", "crHY", <CreditCardIcon />),
@@ -32,7 +32,6 @@ function PaymentChannel(props: MyProps<string>) {
     new MyElement(13, "out", "out", <AllOutIcon />),
     new MyElement(14, "crediti", "cred", <InputIcon />),
     new MyElement(15, "debiti", "deb", <OutputIcon />),
-    new MyElement(16, "welfare", "wlf", <CreditCardIcon />),
   ];
 
   return (
