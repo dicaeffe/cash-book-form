@@ -20,7 +20,7 @@ function ValueField(props: { data: KeyVal; onChange: (d: KeyVal) => void }) {
         required
         id={id}
         helperText={helper}
-        defaultValue={props.data.value}
+        value={props.data.value}
         onChange={(event) => handleFormChange(event)}
         type="text"
         margin="normal"

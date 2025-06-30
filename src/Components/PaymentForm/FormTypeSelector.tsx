@@ -110,7 +110,7 @@ function FormTypeSelector() {
       "buoniPasto" === paymentData.getFieldValue("outgoingFund", index) &&
       "crediti" === paymentData.getFieldValue("incomingFund", index)
     ) {
-      return "es. Pareggiatore (togliere l'abbuono)";
+      return "es. Pareggiatore";
     }
     return "---";
   }
