@@ -39,6 +39,7 @@ function PaymentChannel(props: {
     new MyElement(14, "crediti", "cred", <InputIcon />),
     new MyElement(15, "debiti", "deb", <OutputIcon />),
     new MyElement(16, "welfare", "wlf", <CreditCardIcon />),
+    new MyElement(16, "ccRevolut", "ccREV", <AccountBalanceIcon />),
   ];
 
   const onTransactionChange = (newValue: string) => {
