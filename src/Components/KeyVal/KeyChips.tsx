@@ -1,6 +1,7 @@
 import { Chip } from "@mui/material";
 import KeyVal from "./Model/KeyVal";
 import { useEffect, useState } from "react";
+import Badge from "@mui/material/Badge";
 
 function KeyChips(props: { data: KeyVal; onChange: (d: KeyVal) => void }) {
   const [keyList, setKeyList] = useState<{ data: KeyVal[] }>({ data: [] });
@@ -46,16 +47,18 @@ function KeyChips(props: { data: KeyVal; onChange: (d: KeyVal) => void }) {
     <div>
       <p>{label}</p>
       {keyList?.data.map((v) => (
-        <Chip
-          key={v.key}
-          label={v.key}
-          variant="outlined"
-          color="secondary"
-          onClick={() => {
-            console.info("You clicked the Chip.");
-            onKeySelection(v.key);
-          }}
-        />
+        <Badge badgeContent={v.count} color="primary">
+          <Chip
+            key={v.key}
+            label={v.key}
+            variant="outlined"
+            color="secondary"
+            onClick={() => {
+              console.info("You clicked the Chip.");
+              onKeySelection(v.key);
+            }}
+          />
+        </Badge>
       ))}
     </div>
   );
