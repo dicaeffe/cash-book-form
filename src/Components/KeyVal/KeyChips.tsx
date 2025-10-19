@@ -47,7 +47,7 @@ function KeyChips(props: { data: KeyVal; onChange: (d: KeyVal) => void }) {
     <div>
       <p>{label}</p>
       {keyList?.data.map((v) => (
-        <Badge badgeContent={v.count} color="primary">
+        <Badge badgeContent={v.count} color="secondary">
           <Chip
             key={v.key}
             label={v.key}
